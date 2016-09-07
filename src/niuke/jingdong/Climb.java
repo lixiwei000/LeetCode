@@ -35,7 +35,9 @@ public class Climb
             int passDay = recordList.get(i+1).day - recordList.get(i).day;
             int highFrom = recordList.get(i).high;
             int highTo = recordList.get(i+1).high;
-            max = (int) Math.floor(Math.abs(highTo - highFrom) + passDay / 2);
+            int tmp = (int) Math.floor(Math.abs(highTo - highFrom) + passDay / 2) + highFrom;
+            if (tmp > max)
+                max = tmp;
 
             if (highTo - highFrom > passDay)
             {
